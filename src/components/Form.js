@@ -1,8 +1,10 @@
 import { useState } from "react";
+import classes from './Form.module.css';
+
 
 function Form() {
 
-    
+
 
     const [boxColor, setBoxColor] = useState("text-primary-emphasis bg-primary-subtle border border-primary-subtle");
     const [isValid, setIsValid] = useState(true);
@@ -39,7 +41,7 @@ function Form() {
         event.preventDefault();
 
         if (!isValid) {
-            setBoxColor("text-danger-emphasis bg-danger-subtle border border-danger-subtle");
+            setBoxColor(classes.alert);
             setInvalidMessage(<h3 className="text-danger">Invalid email or password</h3>);
         } else {
             setBoxColor("text-primary-emphasis bg-primary-subtle border border-primary-subtle");
@@ -51,15 +53,18 @@ function Form() {
 
 
     return (
-        <div className="position-relative">
-            <form className="input-group mb-3">
-                <div className="input-group-text">
-                    <label htmlFor="email" className="me-3">Email</label>
+        <div className={classes.form}>
+            <form className="">
+                <div className="">
+                    <div>
+                        <label htmlFor="email" className="me-3">Email</label>
+                    </div>
                     <input id="email" onChange={emailInputHandler} className={boxColor} />
                 </div>
-                <div className="input-group-text">
-                    <label htmlFor="password" className="me-3">Password</label>
-
+                <div className="">
+                    <div>
+                        <label htmlFor="password" className="me-3">Password</label>
+                    </div>
                     <input type='password' id="password" onChange={passwordInputHandler} className={boxColor} />
                 </div>
                 <button className="btn btn-success" onClick={submitHandler}>Submit</button>

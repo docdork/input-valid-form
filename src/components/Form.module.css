@@ -1,0 +1,13 @@
+.form {
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    border: red, solid;
+
+}
+
+.alert {
+    background-color: salmon;
+    color: red;
+}
